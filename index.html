@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Stylon — Wear Your Vibe | Gen Z Fashion</title>
+  <meta name="description" content="The Stylon — AI-powered Gen Z fashion brand. Streetwear, cosmetics, and bold style powered by virtual try-on technology." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>" />
+</head>
+<body>
+
+  <!-- ═══════ LOADER ═══════ -->
+  <div class="loader" id="loader">
+    <div class="loader-logo">THE STYLON</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+
+  <!-- ═══════ NAVBAR ═══════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-brand">THE STYLON</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#tryon">AI Try-On</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#cosmetics">Cosmetics</a></li>
+        <li><a href="#products">Shop</a></li>
+        <li><a href="#bold">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <button class="cart-btn" id="cartToggle" aria-label="Open cart">
+          🛒
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════ HERO ═══════ -->
+  <section class="hero section" id="home">
+    <div class="hero-bg">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">✨ <span>AI-Powered Fashion</span> — Now Live</div>
+        <h1>Wear Your<br/><span class="highlight">Vibe.</span></h1>
+        <p class="hero-sub">AI-powered virtual try-on experience. Upload your pic, choose your fit, own the look — all before you buy.</p>
+        <div class="hero-actions">
+          <a href="#tryon" class="btn-neon">Try Now →</a>
+          <a href="#products" class="btn-glass">Shop Collection</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ AI TRY-ON ═══════ -->
+  <section class="tryon section" id="tryon">
+    <div class="container">
+      <div class="tryon-wrapper">
+        <div class="tryon-visual reveal">
+          <div class="tryon-preview" id="tryonPreview">
+            <div class="tryon-preview-inner">
+              <div class="tryon-before" id="tryonBefore">
+                <span class="tryon-label">Before</span>
+                <span class="tryon-placeholder-icon">📸</span>
+                <span class="tryon-placeholder-text">Upload your photo</span>
+              </div>
+              <div class="tryon-after" id="tryonAfter">
+                <span class="tryon-label">After — AI Styled</span>
+                <span class="tryon-placeholder-icon">✨</span>
+                <span class="tryon-placeholder-text">AI result appears here</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tryon-info reveal reveal-delay-2">
+          <h2>Virtual <span class="highlight">Try-On</span><br/>Powered by AI</h2>
+          <p>Upload your photo, pick your outfit, and see yourself rocking it — instantly. No fitting rooms. No guesses. Just pure fire fits.</p>
+          <div class="tryon-features">
+            <div class="tryon-feature">
+              <span class="tryon-feature-icon">📷</span>
+              <span>Upload any photo of yourself</span>
+            </div>
+            <div class="tryon-feature">
+              <span class="tryon-feature-icon">👕</span>
+              <span>Choose from our latest drops</span>
+            </div>
+            <div class="tryon-feature">
+              <span class="tryon-feature-icon">🤖</span>
+              <span>AI overlays the outfit on you</span>
+            </div>
+            <div class="tryon-feature">
+              <span class="tryon-feature-icon">⚡</span>
+              <span>Instant before &amp; after preview</span>
+            </div>
+          </div>
+          <div class="tryon-buttons">
+            <label class="btn-neon upload-btn">
+              📷 Upload Photo
+              <input type="file" id="tryonUpload" accept="image/*" />
+            </label>
+            <button class="btn-glass" id="tryOutfitBtn" disabled>Try This Outfit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CATEGORIES ═══════ -->
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Collections</span>
+        <h2 class="section-title">Shop by Vibes</h2>
+        <p class="section-desc">From street drip to party glam — explore fits that match your energy.</p>
+      </div>
+      <div class="categories-grid">
+        <div class="category-card reveal reveal-delay-1" data-category="streetwear">
+          <img src="images/product_hoodie.png" alt="Streetwear collection" />
+          <div class="category-card-content">
+            <h3>Streetwear</h3>
+            <p>24 Products</p>
+          </div>
+        </div>
+        <div class="category-card reveal reveal-delay-2" data-category="casual">
+          <img src="images/product_tshirt.png" alt="Casual collection" />
+          <div class="category-card-content">
+            <h3>Casual</h3>
+            <p>18 Products</p>
+          </div>
+        </div>
+        <div class="category-card reveal reveal-delay-3" data-category="party">
+          <img src="images/product_dress.png" alt="Party Wear collection" />
+          <div class="category-card-content">
+            <h3>Party Wear</h3>
+            <p>15 Products</p>
+          </div>
+        </div>
+        <div class="category-card reveal reveal-delay-4" data-category="oversized">
+          <img src="images/product_jacket.png" alt="Oversized collection" />
+          <div class="category-card-content">
+            <h3>Oversized</h3>
+            <p>20 Products</p>
+          </div>
+        </div>
+        <div class="category-card reveal reveal-delay-5" data-category="minimal">
+          <img src="images/product_cargo.png" alt="Minimal collection" />
+          <div class="category-card-content">
+            <h3>Minimal</h3>
+            <p>12 Products</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ COSMETICS ═══════ -->
+  <section class="section" id="cosmetics">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Beauty</span>
+        <h2 class="section-title">Cosmetics Drop</h2>
+        <p class="section-desc">Premium beauty essentials that hit different. Slay all day, every day.</p>
+      </div>
+      <div class="cosmetics-grid">
+        <div class="cosmetic-card reveal reveal-delay-1">
+          <div class="cosmetic-card-img">
+            <img src="images/product_dress.png" alt="Matte Lipstick Collection" />
+          </div>
+          <div class="cosmetic-card-info">
+            <h3>Matte Lipstick Set</h3>
+            <p>8 Bold Shades</p>
+            <div class="price">$29.99</div>
+          </div>
+        </div>
+        <div class="cosmetic-card reveal reveal-delay-2">
+          <div class="cosmetic-card-img">
+            <img src="images/product_sneakers.png" alt="Glow Skincare Kit" />
+          </div>
+          <div class="cosmetic-card-info">
+            <h3>Glow Skincare Kit</h3>
+            <p>Hydrate + Protect</p>
+            <div class="price">$49.99</div>
+          </div>
+        </div>
+        <div class="cosmetic-card reveal reveal-delay-3">
+          <div class="cosmetic-card-img">
+            <img src="images/product_cargo.png" alt="Precision Eyeliner" />
+          </div>
+          <div class="cosmetic-card-info">
+            <h3>Precision Eyeliner</h3>
+            <p>Waterproof 24hr</p>
+            <div class="price">$14.99</div>
+          </div>
+        </div>
+        <div class="cosmetic-card reveal reveal-delay-4">
+          <div class="cosmetic-card-img">
+            <img src="images/product_jacket.png" alt="Midnight Perfume" />
+          </div>
+          <div class="cosmetic-card-info">
+            <h3>Midnight Perfume</h3>
+            <p>Unisex · 100ml</p>
+            <div class="price">$79.99</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FEATURED PRODUCTS ═══════ -->
+  <section class="section" id="products">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Featured</span>
+        <h2 class="section-title">Latest Drops</h2>
+        <p class="section-desc">Fresh fits that just dropped. Cop them before they're gone.</p>
+      </div>
+      <div class="products-filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="streetwear">Streetwear</button>
+        <button class="filter-btn" data-filter="casual">Casual</button>
+        <button class="filter-btn" data-filter="party">Party</button>
+        <button class="filter-btn" data-filter="oversized">Oversized</button>
+        <button class="filter-btn" data-filter="minimal">Minimal</button>
+      </div>
+      <div class="products-grid" id="productsGrid">
+        <!-- Products injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ BOLD STRATEGY ═══════ -->
+  <section class="bold section" id="bold">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Our Vibe</span>
+        <h2 class="section-title">Unapologetically Bold</h2>
+        <p class="section-desc">We're not just a brand. We're a movement.</p>
+      </div>
+      <div class="bold-grid">
+        <div class="bold-card reveal reveal-delay-1">
+          <div class="bold-card-icon">🔥</div>
+          <h3>Built for Gen Z</h3>
+          <p>We get the culture because we ARE the culture. Every piece is designed for the generation that rewrites the rules.</p>
+        </div>
+        <div class="bold-card reveal reveal-delay-2">
+          <div class="bold-card-icon">💎</div>
+          <h3>Confidence is the New Cool</h3>
+          <p>Forget trends. Your vibe IS the trend. Our fits are made to amplify your energy, not box it in.</p>
+        </div>
+        <div class="bold-card reveal reveal-delay-3">
+          <div class="bold-card-icon">🤖</div>
+          <h3>Style Powered by AI</h3>
+          <p>We use cutting-edge AI to help you find your perfect fit — virtual try-on, smart recommendations, zero waste.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ TESTIMONIALS ═══════ -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Real Talk</span>
+        <h2 class="section-title">What the Fam Says</h2>
+      </div>
+      <div class="testimonials-slider reveal">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <div class="testimonial-card">
+            <div class="testimonial-inner">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"No cap, the AI try-on is next level. I could see exactly how the hoodie looked on me before buying. The fit was absolutely fire 🔥"</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">AV</div>
+                <div class="testimonial-author-info">
+                  <h4>Ava Winters</h4>
+                  <p>@ava.vibes · Verified Buyer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-inner">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"The drip is real. Got compliments EVERYWHERE I went. The Stylon literally transformed my wardrobe. Living for this brand fr 💯"</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">JK</div>
+                <div class="testimonial-author-info">
+                  <h4>Jayden Kim</h4>
+                  <p>@jkdrip · Verified Buyer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-inner">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"Low-key obsessed. The oversized jacket I got is chef's kiss. And the skincare line? My skin is GLOWING. This brand just gets it ✨"</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">MR</div>
+                <div class="testimonial-author-info">
+                  <h4>Maya Rodriguez</h4>
+                  <p>@mayaglows · Verified Buyer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-inner">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"Bro the cargo pants go CRAZY. Fit like a dream, looked insane with my chunky sneakers. Re-ordered in two more colors immediately 🫡"</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">LS</div>
+                <div class="testimonial-author-info">
+                  <h4>Liam Santos</h4>
+                  <p>@liam.fits · Verified Buyer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonials-nav" id="testimonialsNav">
+          <button class="active" data-slide="0"></button>
+          <button data-slide="1"></button>
+          <button data-slide="2"></button>
+          <button data-slide="3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>THE STYLON</h3>
+          <p>AI-powered fashion for the fearless generation. Wear your vibe, own your identity, slay every single day.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram">📸</a>
+            <a href="#" aria-label="TikTok">🎵</a>
+            <a href="#" aria-label="Twitter">𝕏</a>
+            <a href="#" aria-label="YouTube">▶️</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#categories">Streetwear</a></li>
+            <li><a href="#categories">Casual</a></li>
+            <li><a href="#categories">Party Wear</a></li>
+            <li><a href="#categories">Oversized</a></li>
+            <li><a href="#cosmetics">Cosmetics</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#bold">Our Story</a></li>
+            <li><a href="#tryon">AI Try-On</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4 style="font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;">Stay in the Loop</h4>
+          <p>Get early access to drops, exclusive deals, and Gen Z wisdom. No spam, we promise.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="your@email.com" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Stylon. All rights reserved.</span>
+        <span>Made with 🔥 for Gen Z</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════ QUICK VIEW MODAL ═══════ -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal" style="position:relative;">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-img" id="modalImg">
+        <img src="" alt="Product" />
+      </div>
+      <div class="modal-content">
+        <p class="modal-category" id="modalCategory"></p>
+        <h2 id="modalName"></h2>
+        <p class="modal-price" id="modalPrice"></p>
+        <p class="modal-desc" id="modalDesc"></p>
+        <button class="btn-neon" id="modalAddCart">🛒 Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ CART SIDEBAR ═══════ -->
+  <div class="cart-sidebar-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Cart 🛒</h3>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <div class="cart-empty-icon">🛒</div>
+        <p>Your cart is empty</p>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="btn-neon" id="checkoutBtn">Checkout →</button>
+    </div>
+  </aside>
+
+  <!-- ═══════ TOAST ═══════ -->
+  <div class="toast" id="toast">
+    <span class="toast-icon">✅</span>
+    <span id="toastMsg">Added to cart!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
