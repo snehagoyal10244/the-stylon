@@ -1,437 +1,511 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Stylon — Wear Your Vibe | Gen Z Fashion</title>
-  <meta name="description" content="The Stylon — AI-powered Gen Z fashion brand. Streetwear, cosmetics, and bold style powered by virtual try-on technology." />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="StyleVibe – AI-powered traditional clothing for Gen-Z. Virtual try-on, trending outfits, and bold fashion.">
+    <title>StyleVibe | Wear the Vibe – AI-Powered Traditional Fashion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Caveat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- ========== LOADING SCREEN ========== -->
+    <div id="loader" class="loader">
+        <div class="loader-inner">
+            <div class="loader-line"></div>
+            <div class="loader-text">
+                <span>S</span><span>T</span><span>Y</span><span>L</span><span>E</span>
+                <span>V</span><span>I</span><span>B</span><span>E</span>
+            </div>
+            <div class="loader-line"></div>
+        </div>
+    </div>
 
-  <!-- ═══════ LOADER ═══════ -->
-  <div class="loader" id="loader">
-    <div class="loader-logo">THE STYLON</div>
-    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
-  </div>
+    <!-- ========== MOUSE FOLLOW GRADIENT ========== -->
+    <div class="cursor-glow" id="cursorGlow"></div>
 
-  <!-- ═══════ NAVBAR ═══════ -->
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <a href="#" class="nav-brand">THE STYLON</a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#tryon">AI Try-On</a></li>
-        <li><a href="#categories">Categories</a></li>
-        <li><a href="#cosmetics">Cosmetics</a></li>
-        <li><a href="#products">Shop</a></li>
-        <li><a href="#bold">About</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
-        <button class="cart-btn" id="cartToggle" aria-label="Open cart">
-          🛒
-          <span class="cart-count" id="cartCount">0</span>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-style">Style</span><span class="logo-vibe">Vibe</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#ai-tryon">AI Try-On</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#featured">Collection</a></li>
+                <li><a href="#ai-styling">AI Styling</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cartBtn" aria-label="Shopping Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-gradient-lines"></div>
+        <div class="hero-content">
+            <p class="hero-tag">✦ AI-POWERED FASHION</p>
+            <h1 class="hero-title">
+                <span class="hero-line">Wear the</span>
+                <span class="hero-line accent-line"><em class="handwritten">Vibe</em></span>
+            </h1>
+            <p class="hero-sub">AI-powered styling experience where tradition meets technology.</p>
+            <div class="hero-btns">
+                <a href="#ai-tryon" class="btn btn-primary neon-border">Try Outfit Now</a>
+                <a href="#featured" class="btn btn-outline">Explore Collection</a>
+            </div>
+        </div>
+        <div class="hero-model">
+            <div class="model-frame">
+                <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=600&q=80"
+                    alt="Traditional Fashion Model" class="model-img">
+                <div class="model-overlay"></div>
+                <div class="model-tag">AI STYLED</div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- ========== AI TRY-ON SECTION ========== -->
+    <section class="section ai-tryon" id="ai-tryon">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-tag">✦ VIRTUAL EXPERIENCE</p>
+                <h2 class="section-title">AI <span class="handwritten">Try-On</span></h2>
+                <p class="section-desc">Upload your photo and see yourself in stunning traditional outfits — powered by
+                    AI.</p>
+            </div>
+            <div class="tryon-wrapper reveal">
+                <div class="tryon-upload-area" id="tryonUpload">
+                    <div class="upload-box" id="uploadBox">
+                        <div class="upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <p class="upload-text">Drop your photo here or <span>browse</span></p>
+                        <p class="upload-hint">JPG, PNG • Max 5MB</p>
+                        <input type="file" id="photoInput" accept="image/*" hidden>
+                    </div>
+                </div>
+                <div class="tryon-preview-area">
+                    <div class="tryon-slider" id="tryonSlider">
+                        <div class="tryon-before" id="tryonBefore">
+                            <div class="tryon-placeholder">
+                                <i class="fas fa-user"></i>
+                                <p>Before</p>
+                            </div>
+                        </div>
+                        <div class="tryon-after" id="tryonAfter">
+                            <div class="tryon-placeholder">
+                                <i class="fas fa-wand-magic-sparkles"></i>
+                                <p>After AI Styling</p>
+                            </div>
+                        </div>
+                        <div class="tryon-handle" id="tryonHandle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle">
+                                <i class="fas fa-arrows-left-right"></i>
+                            </div>
+                            <div class="handle-line"></div>
+                        </div>
+                    </div>
+                    <div class="tryon-indicators">
+                        <div class="indicator"><i class="fas fa-brain"></i> AI Processing</div>
+                        <div class="indicator"><i class="fas fa-shirt"></i> Outfit Mapping</div>
+                        <div class="indicator"><i class="fas fa-check-circle"></i> Style Match</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tryon-cta reveal">
+                <button class="btn btn-primary neon-border" id="tryAiBtn">
+                    <i class="fas fa-wand-magic-sparkles"></i> Try With AI
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CATEGORIES SECTION ========== -->
+    <section class="section categories" id="categories">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-tag">✦ SHOP BY STYLE</p>
+                <h2 class="section-title">Traditional <span class="handwritten">Categories</span></h2>
+            </div>
+            <div class="category-filter reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="boys">Boys</button>
+                <button class="filter-btn" data-filter="girls">Girls</button>
+            </div>
+            <div class="category-grid reveal" id="categoryGrid">
+                <!-- Boys -->
+                <div class="category-card" data-category="boys">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1594938328870-9623159c8c99?w=500&q=80"
+                            alt="Kurta Sets">
+                        <div class="card-overlay">
+                            <a href="#" class="btn btn-outline btn-sm">Explore</a>
+                        </div>
+                    </div>
+                    <h3>Kurta Sets</h3>
+                    <p>Boys Traditional Wear</p>
+                </div>
+                <div class="category-card" data-category="boys">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1610030468398-ab976e577530?w=500&q=80"
+                            alt="Sherwani">
+                        <div class="card-overlay">
+                            <a href="#" class="btn btn-outline btn-sm">Explore</a>
+                        </div>
+                    </div>
+                    <h3>Sherwani</h3>
+                    <p>Boys Traditional Wear</p>
+                </div>
+                <div class="category-card" data-category="boys">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500&q=80"
+                            alt="Indo-Western">
+                        <div class="card-overlay">
+                            <a href="#" class="btn btn-outline btn-sm">Explore</a>
+                        </div>
+                    </div>
+                    <h3>Indo-Western</h3>
+                    <p>Fusion Fashion</p>
+                </div>
+                <div class="category-card" data-category="boys">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1571721795195-a2ca2d3370a9?w=500&q=80"
+                            alt="Festive Wear">
+                        <div class="card-overlay">
+                            <a href="#" class="btn btn-outline btn-sm">Explore</a>
+                        </div>
+                    </div>
+                    <h3>Festive Wear</h3>
+                    <p>Boys Traditional Wear</p>
+                </div>
+                <!-- Girls -->
+                <div class="category-card" data-category="girls">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1610189019599-39d8f0797faa?w=500&q=80"
+                            alt="Lehengas">
+                        <div class="card-overlay">
+                            <a href="#" class="btn btn-outline btn-sm">Explore</a>
+                        </div>
+                    </div>
+                    <h3>Lehengas</h3>
+                    <p>Girls Traditional Wear</p>
+                </div>
+                <div class="category-card" data-category="girls">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1583391733975-bd17048a75ad?w=500&q=80" alt="Sarees">
+                        <div class="card-overlay">
+                            <a href="#" class="btn btn-outline btn-sm">Explore</a>
+                        </div>
+                    </div>
+                    <h3>Sarees</h3>
+                    <p>Girls Traditional Wear</p>
+                </div>
+                <div class="category-card" data-category="girls">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=500&q=80"
+                            alt="Anarkali Suits">
+                        <div class="card-overlay">
+                            <a href="#" class="btn btn-outline btn-sm">Explore</a>
+                        </div>
+                    </div>
+                    <h3>Anarkali Suits</h3>
+                    <p>Girls Traditional Wear</p>
+                </div>
+                <div class="category-card" data-category="girls">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=500&q=80"
+                            alt="Ethnic Fusion">
+                        <div class="card-overlay">
+                            <a href="#" class="btn btn-outline btn-sm">Explore</a>
+                        </div>
+                    </div>
+                    <h3>Ethnic Fusion</h3>
+                    <p>Modern + Traditional</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURED COLLECTION ========== -->
+    <section class="section featured" id="featured">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-tag">✦ TRENDING NOW</p>
+                <h2 class="section-title">Featured <span class="handwritten">Collection</span></h2>
+            </div>
+            <div class="product-grid reveal" id="productGrid">
+                <!-- Products injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== AI STYLING SECTION ========== -->
+    <section class="section ai-styling" id="ai-styling">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-tag">✦ WHAT MAKES US UNIQUE</p>
+                <h2 class="section-title">AI <span class="handwritten">Styling</span></h2>
+            </div>
+            <div class="styling-grid reveal">
+                <div class="styling-card">
+                    <div class="styling-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI Recommends</h3>
+                    <p>Outfits curated by AI based on your style preferences and body type.</p>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="styling-card">
+                    <div class="styling-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Style Prediction</h3>
+                    <p>Know what's trending before it hits the market with our AI trend engine.</p>
+                    <div class="card-glow"></div>
+                </div>
+                <div class="styling-card">
+                    <div class="styling-icon"><i class="fas fa-radar"></i></div>
+                    <h3>Trend Scanner</h3>
+                    <p>Real-time scanning of global fashion trends customized for you.</p>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+            <div class="styling-cta reveal">
+                <button class="btn btn-primary neon-border" id="aiSuggestionBtn">
+                    <i class="fas fa-sparkles"></i> Get AI Suggestion
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-split reveal">
+                <div class="about-images">
+                    <div class="about-img-stack">
+                        <img src="https://images.unsplash.com/photo-1583391733975-bd17048a75ad?w=500&q=80"
+                            alt="Traditional Wear" class="about-img img-1">
+                        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500&q=80"
+                            alt="Modern Fusion" class="about-img img-2">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p class="section-tag">✦ OUR STORY</p>
+                    <h2 class="section-title">Built for <span class="handwritten">Gen‑Z</span></h2>
+                    <div class="about-statements">
+                        <div class="statement">
+                            <span class="statement-num">01</span>
+                            <p>"StyleVibe is <strong>built for Gen-Z</strong>"</p>
+                        </div>
+                        <div class="statement">
+                            <span class="statement-num">02</span>
+                            <p>"Where <strong>Tradition meets Tech</strong>"</p>
+                        </div>
+                        <div class="statement">
+                            <span class="statement-num">03</span>
+                            <p>"<strong>See Yourself</strong> in Every Outfit"</p>
+                        </div>
+                    </div>
+                    <a href="#ai-tryon" class="btn btn-primary neon-border">Experience Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-tag">✦ GET IN TOUCH</p>
+                <h2 class="section-title">Contact <span class="handwritten">Us</span></h2>
+            </div>
+            <div class="contact-wrapper reveal">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="contactName" placeholder="Your Name" required>
+                        <span class="form-line"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="contactEmail" placeholder="Your Email" required>
+                        <span class="form-line"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="contactMessage" rows="5" placeholder="Your Message" required></textarea>
+                        <span class="form-line"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary neon-border">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:stylevibeofficial@mail.com">stylevibeofficial@mail.com</a>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo">
+                        <span class="logo-style">Style</span><span class="logo-vibe">Vibe</span>
+                    </a>
+                    <p>Where Tradition meets Technology. AI-powered fashion for the bold generation.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#ai-tryon">AI Try-On</a></li>
+                        <li><a href="#featured">Collection</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Kurta Sets</a></li>
+                        <li><a href="#">Sherwani</a></li>
+                        <li><a href="#">Lehengas</a></li>
+                        <li><a href="#">Sarees</a></li>
+                        <li><a href="#">Ethnic Fusion</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> stylevibeofficial@mail.com</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 StyleVibe. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== PRODUCT MODAL ========== -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body">
+                <div class="modal-img">
+                    <img id="modalImg" src="" alt="Product">
+                </div>
+                <div class="modal-info">
+                    <h3 id="modalTitle"></h3>
+                    <p id="modalDesc"></p>
+                    <p class="modal-price" id="modalPrice"></p>
+                    <div class="modal-sizes">
+                        <span class="size-btn">S</span>
+                        <span class="size-btn active">M</span>
+                        <span class="size-btn">L</span>
+                        <span class="size-btn">XL</span>
+                    </div>
+                    <button class="btn btn-primary neon-border" id="modalCartBtn">
+                        <i class="fas fa-shopping-bag"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CART SIDEBAR ========== -->
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-sidebar" id="cartSidebar">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="cart-close" id="cartClose">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <div class="cart-empty">
+                    <i class="fas fa-shopping-bag"></i>
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total</span>
+                    <span id="cartTotal">₹0</span>
+                </div>
+                <button class="btn btn-primary neon-border cart-checkout">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== AI SUGGESTION MODAL ========== -->
+    <div class="modal-overlay" id="aiModal">
+        <div class="modal-content ai-modal-content">
+            <button class="modal-close" id="aiModalClose">&times;</button>
+            <div class="ai-modal-body">
+                <div class="ai-thinking">
+                    <div class="ai-pulse"></div>
+                    <p class="ai-status">Analyzing your style...</p>
+                </div>
+                <div class="ai-result" id="aiResult" style="display:none;">
+                    <h3>Your AI Style Match</h3>
+                    <div class="ai-outfit">
+                        <img src="https://images.unsplash.com/photo-1594938328870-9623159c8c99?w=400&q=80"
+                            alt="AI Suggestion">
+                    </div>
+                    <p class="ai-outfit-name">Royal Black Sherwani</p>
+                    <p class="ai-outfit-desc">Based on trending patterns and your predicted preferences, this outfit
+                        scores a <strong>96% style match</strong>.</p>
+                    <button class="btn btn-primary neon-border">Shop This Look</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CHATBASE WIDGET ========== -->
+    <div id="chatbase-container" class="chatbase-wrapper">
+        <button id="chat-toggle" class="chat-toggle-btn" aria-label="Open Chat">
+            <i class="fas fa-comment-dots"></i>
         </button>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+        <div id="chat-window" class="chat-window">
+            <iframe src="https://www.chatbase.co/chatbot-iframe/-3E1UU3u15YUsErRj7CrY" width="100%" height="100%"
+                frameborder="0" title="Chatbase Chatbot"></iframe>
+        </div>
     </div>
-  </nav>
 
-  <!-- ═══════ HERO ═══════ -->
-  <section class="hero section" id="home">
-    <div class="hero-bg">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-    </div>
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-badge">✨ <span>AI-Powered Fashion</span> — Now Live</div>
-        <h1>Wear Your<br/><span class="highlight">Vibe.</span></h1>
-        <p class="hero-sub">AI-powered virtual try-on experience. Upload your pic, choose your fit, own the look — all before you buy.</p>
-        <div class="hero-actions">
-          <a href="#tryon" class="btn-neon">Try Now →</a>
-          <a href="#products" class="btn-glass">Shop Collection</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ AI TRY-ON ═══════ -->
-  <section class="tryon section" id="tryon">
-    <div class="container">
-      <div class="tryon-wrapper">
-        <div class="tryon-visual reveal">
-          <div class="tryon-preview" id="tryonPreview">
-            <div class="tryon-preview-inner">
-              <div class="tryon-before" id="tryonBefore">
-                <span class="tryon-label">Before</span>
-                <span class="tryon-placeholder-icon">📸</span>
-                <span class="tryon-placeholder-text">Upload your photo</span>
-              </div>
-              <div class="tryon-after" id="tryonAfter">
-                <span class="tryon-label">After — AI Styled</span>
-                <span class="tryon-placeholder-icon">✨</span>
-                <span class="tryon-placeholder-text">AI result appears here</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tryon-info reveal reveal-delay-2">
-          <h2>Virtual <span class="highlight">Try-On</span><br/>Powered by AI</h2>
-          <p>Upload your photo, pick your outfit, and see yourself rocking it — instantly. No fitting rooms. No guesses. Just pure fire fits.</p>
-          <div class="tryon-features">
-            <div class="tryon-feature">
-              <span class="tryon-feature-icon">📷</span>
-              <span>Upload any photo of yourself</span>
-            </div>
-            <div class="tryon-feature">
-              <span class="tryon-feature-icon">👕</span>
-              <span>Choose from our latest drops</span>
-            </div>
-            <div class="tryon-feature">
-              <span class="tryon-feature-icon">🤖</span>
-              <span>AI overlays the outfit on you</span>
-            </div>
-            <div class="tryon-feature">
-              <span class="tryon-feature-icon">⚡</span>
-              <span>Instant before &amp; after preview</span>
-            </div>
-          </div>
-          <div class="tryon-buttons">
-            <label class="btn-neon upload-btn">
-              📷 Upload Photo
-              <input type="file" id="tryonUpload" accept="image/*" />
-            </label>
-            <button class="btn-glass" id="tryOutfitBtn" disabled>Try This Outfit</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ CATEGORIES ═══════ -->
-  <section class="section" id="categories">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Collections</span>
-        <h2 class="section-title">Shop by Vibes</h2>
-        <p class="section-desc">From street drip to party glam — explore fits that match your energy.</p>
-      </div>
-      <div class="categories-grid">
-        <div class="category-card reveal reveal-delay-1" data-category="streetwear">
-          <img src="images/product_hoodie.png" alt="Streetwear collection" />
-          <div class="category-card-content">
-            <h3>Streetwear</h3>
-            <p>24 Products</p>
-          </div>
-        </div>
-        <div class="category-card reveal reveal-delay-2" data-category="casual">
-          <img src="images/product_tshirt.png" alt="Casual collection" />
-          <div class="category-card-content">
-            <h3>Casual</h3>
-            <p>18 Products</p>
-          </div>
-        </div>
-        <div class="category-card reveal reveal-delay-3" data-category="party">
-          <img src="images/product_dress.png" alt="Party Wear collection" />
-          <div class="category-card-content">
-            <h3>Party Wear</h3>
-            <p>15 Products</p>
-          </div>
-        </div>
-        <div class="category-card reveal reveal-delay-4" data-category="oversized">
-          <img src="images/product_jacket.png" alt="Oversized collection" />
-          <div class="category-card-content">
-            <h3>Oversized</h3>
-            <p>20 Products</p>
-          </div>
-        </div>
-        <div class="category-card reveal reveal-delay-5" data-category="minimal">
-          <img src="images/product_cargo.png" alt="Minimal collection" />
-          <div class="category-card-content">
-            <h3>Minimal</h3>
-            <p>12 Products</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ COSMETICS ═══════ -->
-  <section class="section" id="cosmetics">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Beauty</span>
-        <h2 class="section-title">Cosmetics Drop</h2>
-        <p class="section-desc">Premium beauty essentials that hit different. Slay all day, every day.</p>
-      </div>
-      <div class="cosmetics-grid">
-        <div class="cosmetic-card reveal reveal-delay-1">
-          <div class="cosmetic-card-img">
-            <img src="images/product_dress.png" alt="Matte Lipstick Collection" />
-          </div>
-          <div class="cosmetic-card-info">
-            <h3>Matte Lipstick Set</h3>
-            <p>8 Bold Shades</p>
-            <div class="price">$29.99</div>
-          </div>
-        </div>
-        <div class="cosmetic-card reveal reveal-delay-2">
-          <div class="cosmetic-card-img">
-            <img src="images/product_sneakers.png" alt="Glow Skincare Kit" />
-          </div>
-          <div class="cosmetic-card-info">
-            <h3>Glow Skincare Kit</h3>
-            <p>Hydrate + Protect</p>
-            <div class="price">$49.99</div>
-          </div>
-        </div>
-        <div class="cosmetic-card reveal reveal-delay-3">
-          <div class="cosmetic-card-img">
-            <img src="images/product_cargo.png" alt="Precision Eyeliner" />
-          </div>
-          <div class="cosmetic-card-info">
-            <h3>Precision Eyeliner</h3>
-            <p>Waterproof 24hr</p>
-            <div class="price">$14.99</div>
-          </div>
-        </div>
-        <div class="cosmetic-card reveal reveal-delay-4">
-          <div class="cosmetic-card-img">
-            <img src="images/product_jacket.png" alt="Midnight Perfume" />
-          </div>
-          <div class="cosmetic-card-info">
-            <h3>Midnight Perfume</h3>
-            <p>Unisex · 100ml</p>
-            <div class="price">$79.99</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ FEATURED PRODUCTS ═══════ -->
-  <section class="section" id="products">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Featured</span>
-        <h2 class="section-title">Latest Drops</h2>
-        <p class="section-desc">Fresh fits that just dropped. Cop them before they're gone.</p>
-      </div>
-      <div class="products-filters reveal">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="streetwear">Streetwear</button>
-        <button class="filter-btn" data-filter="casual">Casual</button>
-        <button class="filter-btn" data-filter="party">Party</button>
-        <button class="filter-btn" data-filter="oversized">Oversized</button>
-        <button class="filter-btn" data-filter="minimal">Minimal</button>
-      </div>
-      <div class="products-grid" id="productsGrid">
-        <!-- Products injected by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ BOLD STRATEGY ═══════ -->
-  <section class="bold section" id="bold">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Our Vibe</span>
-        <h2 class="section-title">Unapologetically Bold</h2>
-        <p class="section-desc">We're not just a brand. We're a movement.</p>
-      </div>
-      <div class="bold-grid">
-        <div class="bold-card reveal reveal-delay-1">
-          <div class="bold-card-icon">🔥</div>
-          <h3>Built for Gen Z</h3>
-          <p>We get the culture because we ARE the culture. Every piece is designed for the generation that rewrites the rules.</p>
-        </div>
-        <div class="bold-card reveal reveal-delay-2">
-          <div class="bold-card-icon">💎</div>
-          <h3>Confidence is the New Cool</h3>
-          <p>Forget trends. Your vibe IS the trend. Our fits are made to amplify your energy, not box it in.</p>
-        </div>
-        <div class="bold-card reveal reveal-delay-3">
-          <div class="bold-card-icon">🤖</div>
-          <h3>Style Powered by AI</h3>
-          <p>We use cutting-edge AI to help you find your perfect fit — virtual try-on, smart recommendations, zero waste.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ TESTIMONIALS ═══════ -->
-  <section class="testimonials section" id="testimonials">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Real Talk</span>
-        <h2 class="section-title">What the Fam Says</h2>
-      </div>
-      <div class="testimonials-slider reveal">
-        <div class="testimonials-track" id="testimonialsTrack">
-          <div class="testimonial-card">
-            <div class="testimonial-inner">
-              <div class="testimonial-stars">★★★★★</div>
-              <p class="testimonial-text">"No cap, the AI try-on is next level. I could see exactly how the hoodie looked on me before buying. The fit was absolutely fire 🔥"</p>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar">AV</div>
-                <div class="testimonial-author-info">
-                  <h4>Ava Winters</h4>
-                  <p>@ava.vibes · Verified Buyer</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-inner">
-              <div class="testimonial-stars">★★★★★</div>
-              <p class="testimonial-text">"The drip is real. Got compliments EVERYWHERE I went. The Stylon literally transformed my wardrobe. Living for this brand fr 💯"</p>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar">JK</div>
-                <div class="testimonial-author-info">
-                  <h4>Jayden Kim</h4>
-                  <p>@jkdrip · Verified Buyer</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-inner">
-              <div class="testimonial-stars">★★★★★</div>
-              <p class="testimonial-text">"Low-key obsessed. The oversized jacket I got is chef's kiss. And the skincare line? My skin is GLOWING. This brand just gets it ✨"</p>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar">MR</div>
-                <div class="testimonial-author-info">
-                  <h4>Maya Rodriguez</h4>
-                  <p>@mayaglows · Verified Buyer</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-inner">
-              <div class="testimonial-stars">★★★★★</div>
-              <p class="testimonial-text">"Bro the cargo pants go CRAZY. Fit like a dream, looked insane with my chunky sneakers. Re-ordered in two more colors immediately 🫡"</p>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar">LS</div>
-                <div class="testimonial-author-info">
-                  <h4>Liam Santos</h4>
-                  <p>@liam.fits · Verified Buyer</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonials-nav" id="testimonialsNav">
-          <button class="active" data-slide="0"></button>
-          <button data-slide="1"></button>
-          <button data-slide="2"></button>
-          <button data-slide="3"></button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ FOOTER ═══════ -->
-  <footer class="footer" id="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3>THE STYLON</h3>
-          <p>AI-powered fashion for the fearless generation. Wear your vibe, own your identity, slay every single day.</p>
-          <div class="footer-socials">
-            <a href="#" aria-label="Instagram">📸</a>
-            <a href="#" aria-label="TikTok">🎵</a>
-            <a href="#" aria-label="Twitter">𝕏</a>
-            <a href="#" aria-label="YouTube">▶️</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Shop</h4>
-          <ul>
-            <li><a href="#categories">Streetwear</a></li>
-            <li><a href="#categories">Casual</a></li>
-            <li><a href="#categories">Party Wear</a></li>
-            <li><a href="#categories">Oversized</a></li>
-            <li><a href="#cosmetics">Cosmetics</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="#bold">Our Story</a></li>
-            <li><a href="#tryon">AI Try-On</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Sustainability</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="footer-newsletter">
-          <h4 style="font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;">Stay in the Loop</h4>
-          <p>Get early access to drops, exclusive deals, and Gen Z wisdom. No spam, we promise.</p>
-          <form class="newsletter-form" id="newsletterForm">
-            <input type="email" placeholder="your@email.com" required />
-            <button type="submit">Subscribe</button>
-          </form>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 The Stylon. All rights reserved.</span>
-        <span>Made with 🔥 for Gen Z</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ═══════ QUICK VIEW MODAL ═══════ -->
-  <div class="modal-overlay" id="quickViewModal">
-    <div class="modal" style="position:relative;">
-      <button class="modal-close" id="modalClose">✕</button>
-      <div class="modal-img" id="modalImg">
-        <img src="" alt="Product" />
-      </div>
-      <div class="modal-content">
-        <p class="modal-category" id="modalCategory"></p>
-        <h2 id="modalName"></h2>
-        <p class="modal-price" id="modalPrice"></p>
-        <p class="modal-desc" id="modalDesc"></p>
-        <button class="btn-neon" id="modalAddCart">🛒 Add to Cart</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════ CART SIDEBAR ═══════ -->
-  <div class="cart-sidebar-overlay" id="cartOverlay"></div>
-  <aside class="cart-sidebar" id="cartSidebar">
-    <div class="cart-header">
-      <h3>Your Cart 🛒</h3>
-      <button class="cart-close" id="cartClose">✕</button>
-    </div>
-    <div class="cart-items" id="cartItems">
-      <div class="cart-empty" id="cartEmpty">
-        <div class="cart-empty-icon">🛒</div>
-        <p>Your cart is empty</p>
-      </div>
-    </div>
-    <div class="cart-footer">
-      <div class="cart-total">
-        <span>Total</span>
-        <span id="cartTotal">$0.00</span>
-      </div>
-      <button class="btn-neon" id="checkoutBtn">Checkout →</button>
-    </div>
-  </aside>
-
-  <!-- ═══════ TOAST ═══════ -->
-  <div class="toast" id="toast">
-    <span class="toast-icon">✅</span>
-    <span id="toastMsg">Added to cart!</span>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
