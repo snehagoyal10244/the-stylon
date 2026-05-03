@@ -434,21 +434,6 @@ document.getElementById('checkoutBtn').addEventListener('click', () => {
 });
 
 // ═══════════════════════════════════════════════════════
-// CHATBOT WIDGET TOGGLE
-// ═══════════════════════════════════════════════════════
-const chatWidget = document.getElementById('chatWidget');
-const chatToggleBtn = document.getElementById('chatToggleBtn');
-const chatCloseWidget = document.getElementById('chatCloseWidget');
-
-function toggleChat() {
-  chatWidget.classList.toggle('active');
-  chatToggleBtn.classList.toggle('active');
-}
-
-chatToggleBtn.addEventListener('click', toggleChat);
-chatCloseWidget.addEventListener('click', toggleChat);
-
-// ═══════════════════════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════════════════════
 renderProducts();
