@@ -1905,7 +1905,7 @@ img {
 .chat-toggle-btn {
   position: fixed;
   bottom: 30px;
-  right: 30px;
+  left: 30px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -1936,7 +1936,7 @@ img {
 .chat-widget-container {
   position: fixed;
   bottom: 30px;
-  right: 30px;
+  left: 30px;
   width: 400px;
   height: 700px;
   max-width: calc(100vw - 60px);
@@ -2031,6 +2031,6 @@ img {
   
   .chat-toggle-btn {
     bottom: 20px;
-    right: 20px;
+    left: 20px;
   }
 }
